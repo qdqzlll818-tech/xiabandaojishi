@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f1f0e9">
+  <link rel="icon" href="data:,">
+  <meta name="description" content="一个会替打工人发疯的有情绪下班倒计时。">
+  <title>谁给我的下班倒计时加情绪了？？？</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-mood="calm">
+  <main class="countdown-shell" aria-live="polite">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <p class="brand" id="brand-copy">下班倒计时</p>
+        <span class="friday-tag" id="friday-tag">FRIDAY MODE</span>
+      </div>
+      <div class="topbar-tools">
+        <nav class="persona-preview" aria-label="人格预览">
+          <button type="button" data-persona-choice="normal">NORMAL</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-persona-choice="friday">FRIDAY</button>
+        </nav>
+        <label class="time-setting" for="offwork-time">
+          <span>今天几点撤</span>
+          <input id="offwork-time" type="time" value="18:00" aria-label="设置下班时间">
+        </label>
+      </div>
+    </header>
+
+    <section class="hero" aria-labelledby="mood-headline">
+      <div class="status-line">
+        <span id="status-label">平静上班</span>
+        <span class="status-rule" aria-hidden="true"></span>
+        <span id="target-copy">目标 18:00</span>
+      </div>
+
+      <div class="clock-wrap" id="clock-wrap">
+        <p class="clock-prefix" id="clock-prefix">距离下班还有</p>
+        <time class="countdown" id="countdown" datetime="PT0S">00:00:00</time>
+      </div>
+
+      <div class="copy-block">
+        <h1 id="mood-headline">今天还早，别高兴得太早</h1>
+        <span class="weekend-loader" id="weekend-loader" aria-hidden="true"><i></i><i></i><i></i></span>
+        <p id="mood-detail">先装一会儿忙，时间会自己走。</p>
+      </div>
+    </section>
+
+    <footer class="bottom-bar">
+      <p id="tiny-note">本组件正在替你盯表</p>
+      <button id="demand-button" type="button">
+        <span>老板又来了</span>
+        <span class="button-mark" aria-hidden="true">↗</span>
+      </button>
+    </footer>
+  </main>
+
+  <div class="demand-flash" id="demand-flash" aria-hidden="true">新增需求</div>
+  <div class="sparks" id="sparks" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
+
